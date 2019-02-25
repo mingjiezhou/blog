@@ -51,7 +51,7 @@ time_stamp | 时间戳（暂时可不加）
 ~~~
 **前端 ajax 的封装**
 
-~~~
+~~~ js
 // 定义的封装函数
 function postData(data, callback, load) {
 	console.log("页面传过来的data", data);
@@ -121,7 +121,7 @@ postData(data, function(result) {
 ~~~
 
 **加密函数的定义**
-~~~
+~~~ js
 function encryption(params){
     // sid 和 accessToken 是调登录接口返回的，加入缓存
     
