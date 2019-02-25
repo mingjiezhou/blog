@@ -1,38 +1,41 @@
 ---
-title: Hello World
+title: hello，world
+date: 2018-01-22 15:09:45
+
+description: 这是我用 hexo 写的第一篇文章，介绍了 hexo 的基本操作指令，包括从新建立一篇新的文章，开启本地服务，构建静态文件，远程部署。
 ---
-Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
+这是我用 hexo 写的第一篇文章，介绍了 hexo 的基本操作指令，包括从新建立一篇新的文章，开启本地服务，构建静态文件，远程部署。
 
-## Quick Start
+## 快速开始
 
-### Create a new post
+### 创建一个新帖子
 
 ``` bash
 $ hexo new "My New Post"
 ```
 
-More info: [Writing](https://hexo.io/docs/writing.html)
+更多信息: [写作](https://hexo.io/docs/writing.html)
 
-### Run server
+### 运行服务器
 
 ``` bash
 $ hexo server
 ```
 
-More info: [Server](https://hexo.io/docs/server.html)
+更多信息: [服务器](https://hexo.io/docs/server.html)
 
-### Generate static files
+### 生成静态文件
 
 ``` bash
 $ hexo generate
 ```
 
-More info: [Generating](https://hexo.io/docs/generating.html)
+更多信息: [生成](https://hexo.io/docs/generating.html)
 
-### Deploy to remote sites
+### 部署到远程站点
 
 ``` bash
 $ hexo deploy
 ```
 
-More info: [Deployment](https://hexo.io/docs/deployment.html)
+更多信息: [部署](https://hexo.io/docs/deployment.html)
