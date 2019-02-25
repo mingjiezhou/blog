@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>JavaScript 文本框字数动态监测 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="通过js代码实时监测，文本框内容的变化以及长度，下图是一个实际使用场景。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript 文本框字数动态监测">
+<meta property="og:url" content="http://yoursite.com/2017/11/28/JavaScript-文本框字数动态监测/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="通过js代码实时监测，文本框内容的变化以及长度，下图是一个实际使用场景。">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://images2018.cnblogs.com/blog/1194550/201711/1194550-20171128184815206-1560586040.png">
+<meta property="og:updated_time" content="2019-02-25T06:37:43.410Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript 文本框字数动态监测">
+<meta name="twitter:description" content="通过js代码实时监测，文本框内容的变化以及长度，下图是一个实际使用场景。">
+<meta name="twitter:image" content="https://images2018.cnblogs.com/blog/1194550/201711/1194550-20171128184815206-1560586040.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-JavaScript-文本框字数动态监测" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/28/JavaScript-文本框字数动态监测/" class="article-date">
+  <time datetime="2017-11-28T10:43:51.000Z" itemprop="datePublished">2017-11-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JavaScript 文本框字数动态监测
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>通过js代码实时监测，文本框内容的变化以及长度，下图是一个实际使用场景。</p>
+<p><img src="https://images2018.cnblogs.com/blog/1194550/201711/1194550-20171128184815206-1560586040.png" alt>
+　　</p>
+<p>HTML部分：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">"Text1"</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">onkeyup</span>=<span class="string">"TmaxLength(this)"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"Counter"</span> <span class="attr">style</span>=<span class="string">"color: red;"</span>&gt;</span>0<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>JS部分</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">　　<span class="comment">//实时更新输入框文字长度</span></span><br><span class="line">　　<span class="function"><span class="keyword">function</span> <span class="title">TmaxLength</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">　　　　<span class="comment">//x.getAttribute是判断是否为DOM结构</span></span><br><span class="line">　　　　<span class="keyword">var</span> nMaxLen = x.getAttribute ? <span class="built_in">parseInt</span>(x.getAttribute(<span class="string">"maxlength"</span>)) : <span class="string">""</span>; </span><br><span class="line">　　　　<span class="keyword">if</span> (x.getAttribute &amp;&amp; x.value.length &gt; nMaxLen) &#123; </span><br><span class="line">    　　　　x.value = x.value.substring(<span class="number">0</span>, nMaxLen); </span><br><span class="line">    　　&#125; </span><br><span class="line">　　　　<span class="built_in">document</span>.getElementById(<span class="string">"Counter"</span>).innerHTML = x.value.length; </span><br><span class="line">　　&#125;</span><br></pre></td></tr></table></figure>
+<p>注意：对于可编辑div的话，不能用value属性，改为innerText,且会涉及到光标位置的问题，下篇文章会写到光标定位。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/11/28/JavaScript-文本框字数动态监测/" data-id="cjsk0qzd10006k4v1zwcwlx2v" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/01/17/前端-PS-常用快捷键整理/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          前端 PS 常用快捷键整理
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/11/20/市面上主流的-UI-框架/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">市面上主流的 UI 框架</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/07/22/API 接口加密方案/">API 接口加密方案</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/05/JavaScript-获取地址栏参数/">JavaScript 获取地址栏参数</a>
+          </li>
+        
+          <li>
+            <a href="/2018/06/30/Window-下-MySQL-环境的安装/">Window 下 MySQL 环境的安装</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/31/JavaScript-中的12种循环遍历方法/">JavaScript 中的12种循环遍历方法</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/21/前端切图技巧/">前端切图技巧</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

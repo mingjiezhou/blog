@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>JavaScript 之 rem 的动态控制 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="在写响应式H5页面的时候，我常常会用rem字体，为了兼容多个分辨率的设备，需要写多个 @media 标签，太麻烦并且不够精致，尤其是移动端的页面往往达不到我想要的效果，后来就用Js 替代了css的 @media，我觉得挺好用。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript 之 rem 的动态控制">
+<meta property="og:url" content="http://yoursite.com/2017/02/05/JavaScript-之-rem-的动态控制/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="在写响应式H5页面的时候，我常常会用rem字体，为了兼容多个分辨率的设备，需要写多个 @media 标签，太麻烦并且不够精致，尤其是移动端的页面往往达不到我想要的效果，后来就用Js 替代了css的 @media，我觉得挺好用。">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-02-25T06:37:43.408Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript 之 rem 的动态控制">
+<meta name="twitter:description" content="在写响应式H5页面的时候，我常常会用rem字体，为了兼容多个分辨率的设备，需要写多个 @media 标签，太麻烦并且不够精致，尤其是移动端的页面往往达不到我想要的效果，后来就用Js 替代了css的 @media，我觉得挺好用。">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-JavaScript-之-rem-的动态控制" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/02/05/JavaScript-之-rem-的动态控制/" class="article-date">
+  <time datetime="2017-02-05T03:07:04.000Z" itemprop="datePublished">2017-02-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JavaScript 之 rem 的动态控制
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>摘要：在写响应式H5页面的时候，我常常会用rem字体，为了兼容多个分辨率的设备，需要写多个@media标签，太麻烦并且不够精致，尤其是移动端的页面往往达不到我想要的效果，后来就用js替代了css的@media，下面是代码。（以下方案以750px的设计图）</p>
+<p><strong>方案一、缺点：浏览器里使用没问题，安卓和ios设备hybrid app里嵌入的时候，会受到系统字体设置的影响，原理就是当系统设置超大字体的时候，会改变html的font-size大小，引起页面bug。</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params">doc, win</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> docEl = doc.documentElement,</span><br><span class="line">        resizeEvt = <span class="string">'orientationchange'</span> <span class="keyword">in</span> <span class="built_in">window</span> ? <span class="string">'orientationchange'</span> : <span class="string">'resize'</span>,</span><br><span class="line">        recalc = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> clientWidth = docEl.clientWidth;</span><br><span class="line">            <span class="keyword">if</span> (!clientWidth) <span class="keyword">return</span>;</span><br><span class="line">            <span class="keyword">if</span>(clientWidth&gt;=<span class="number">750</span>)&#123;</span><br><span class="line">                docEl.style.fontSize = <span class="string">'100px'</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                docEl.style.fontSize = <span class="number">100</span> * (clientWidth / <span class="number">750</span>) + <span class="string">'px !important'</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">    <span class="keyword">if</span> (!doc.addEventListener) <span class="keyword">return</span>;</span><br><span class="line">    win.addEventListener(resizeEvt, recalc, <span class="literal">false</span>);</span><br><span class="line">    doc.addEventListener(<span class="string">'DOMContentLoaded'</span>, recalc, <span class="literal">false</span>);</span><br><span class="line">&#125;)(<span class="built_in">document</span>, <span class="built_in">window</span>);</span><br></pre></td></tr></table></figure></p>
+<p><strong>方案二、重置了系统设置的字体，解决了此bug，暂无发现有其他问题</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">htmlFontSize</span>(<span class="params"></span>)</span>&#123; </span><br><span class="line">    <span class="keyword">var</span> h = <span class="built_in">Math</span>.max(<span class="built_in">document</span>.documentElement.clientHeight, <span class="built_in">window</span>.innerHeight || <span class="number">0</span>); </span><br><span class="line">    <span class="keyword">var</span> w = <span class="built_in">Math</span>.max(<span class="built_in">document</span>.documentElement.clientWidth, <span class="built_in">window</span>.innerWidth || <span class="number">0</span>); </span><br><span class="line">    <span class="keyword">var</span> width = w &gt; h ? h : w; </span><br><span class="line">    width = width &gt; <span class="number">750</span> ? <span class="number">750</span> : width; </span><br><span class="line">    <span class="keyword">var</span> fz = ~~(width*<span class="number">100000</span>/<span class="number">37.5</span>)/<span class="number">20000</span>; </span><br><span class="line">    <span class="built_in">document</span>.getElementsByTagName(<span class="string">"html"</span>)[<span class="number">0</span>].style.cssText = <span class="string">'font-size: '</span> + fz +<span class="string">"px"</span>; </span><br><span class="line">    <span class="keyword">var</span> realfz = ~~(+<span class="built_in">window</span>.getComputedStyle(<span class="built_in">document</span>.getElementsByTagName(<span class="string">"html"</span>)[<span class="number">0</span>]).fontSize.replace(<span class="string">'px'</span>,<span class="string">''</span>)*<span class="number">10000</span>)/<span class="number">10000</span>;   </span><br><span class="line">    <span class="keyword">if</span> (fz !== realfz) &#123; </span><br><span class="line">        <span class="built_in">document</span>.getElementsByTagName(<span class="string">"html"</span>)[<span class="number">0</span>].style.cssText = <span class="string">'font-size:'</span> + fz * (fz / realfz)+<span class="string">"px"</span>; </span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>衍生问题：安卓和ios怎么屏蔽系统字体大小的设置？</strong></p>
+<p><strong>安卓、WebView加上这个设置后,可以屏蔽系统设置的字体影响，这样就不用js再去判断了。</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">webview.getSettings().setTextZoom(<span class="number">100</span>);</span><br></pre></td></tr></table></figure></p>
+<p><strong>ios、ios当系统字体变化时，会给body增加新属性 -webkit-text-size-adjust，所以直接css控制下。</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">body &#123;</span><br><span class="line">    -webkit-text-size-adjust: <span class="number">100</span>% !important;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/02/05/JavaScript-之-rem-的动态控制/" data-id="cjsk0qzd00005k4v1d61em4rd" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/11/20/市面上主流的-UI-框架/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          市面上主流的 UI 框架
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/07/22/API 接口加密方案/">API 接口加密方案</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/05/JavaScript-获取地址栏参数/">JavaScript 获取地址栏参数</a>
+          </li>
+        
+          <li>
+            <a href="/2018/06/30/Window-下-MySQL-环境的安装/">Window 下 MySQL 环境的安装</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/31/JavaScript-中的12种循环遍历方法/">JavaScript 中的12种循环遍历方法</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/21/前端切图技巧/">前端切图技巧</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

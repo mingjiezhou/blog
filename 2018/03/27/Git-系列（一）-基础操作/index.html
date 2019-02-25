@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Git 系列（一）|基础 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="介绍 github 管理工具 git 的入门常用操作，包括下载、安装等。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git 系列（一）|基础">
+<meta property="og:url" content="http://yoursite.com/2018/03/27/Git-系列（一）-基础操作/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="介绍 github 管理工具 git 的入门常用操作，包括下载、安装等。">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://pba3iv8pa.bkt.clouddn.com/gitlogo.jpg">
+<meta property="og:updated_time" content="2019-02-25T06:37:43.402Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Git 系列（一）|基础">
+<meta name="twitter:description" content="介绍 github 管理工具 git 的入门常用操作，包括下载、安装等。">
+<meta name="twitter:image" content="http://pba3iv8pa.bkt.clouddn.com/gitlogo.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Git-系列（一）-基础操作" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/27/Git-系列（一）-基础操作/" class="article-date">
+  <time datetime="2018-03-27T06:46:05.000Z" itemprop="datePublished">2018-03-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Git 系列（一）|基础
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="http://pba3iv8pa.bkt.clouddn.com/gitlogo.jpg" alt></p>
+<h3 id="一、下载window-linux-mac"><a href="#一、下载window-linux-mac" class="headerlink" title="一、下载window/linux/mac"></a>一、下载window/linux/mac</h3><h3 id="二、注册Github账户"><a href="#二、注册Github账户" class="headerlink" title="二、注册Github账户"></a>二、注册Github账户</h3><h3 id="三、基本使用（window）"><a href="#三、基本使用（window）" class="headerlink" title="三、基本使用（window）"></a>三、基本使用（window）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1. 新建文件夹和文件</span><br><span class="line">2. git status // 查看git仓库状态，任何指令前都要带git</span><br><span class="line">3. git init //初始化仓库，对于新建的文件夹和文件，需要执行这一步，才成为一个git仓库</span><br><span class="line">4. git add // 将新文件增加到仓库，相当于“暂存区”</span><br><span class="line">5. git commit -m &quot;first commit&quot; //提交文件到仓库，真正的本地仓库</span><br><span class="line">6. git log //查看所有的commit记录</span><br><span class="line">7. git branch //建立分支</span><br><span class="line">8. git checkout a //切换分支</span><br></pre></td></tr></table></figure>
+<h3 id="四、向Github提交代码"><a href="#四、向Github提交代码" class="headerlink" title="四、向Github提交代码"></a>四、向Github提交代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">1. SSH授权，在github上添加ssh key配置（ id_rsa.pub公钥 ）</span><br><span class="line">2. 生成SSH key,在终端里输入ssh验证是否有安装</span><br><span class="line">3. 输入 ssh-keygen -t rsa ，什么意思呢？就是指定 rsa 算法生成密钥，接着连续三个回车键（不需要输入密码），然后就会生成两个文件 id_rsa 和 id_rsa.pub ，而 id_rsa 是密钥，</span><br><span class="line">id_rsa.pub 就是公钥。这两文件默认分别在如下目录里生成：向GitHub 提交代码Linux/Mac 系统 在 ~/.ssh 下，win系统在 /c/Documents and Settings/username/.ssh下，都是隐藏文件，相信你们有办法查看的。接下来要做的是把 id_rsa.pub 的内容添加到 GitHub 上，这样你本地的 id_rsa 密钥跟 GitHub上的 id_rsa.pub 公钥进行配对，授权成功才可以提交代码。</span><br><span class="line">4. git push origin master //推送代码到远程github仓库</span><br><span class="line">5. git pull origin master //更新远程代码到本地</span><br><span class="line">6. git clone git@github.com:rainzhou/test.git //克隆github项目到本地，修改后push即可</span><br><span class="line">7. git remote add origin git@github.com:rainzhou/test.git //添加一个远程仓库，他的地址是 git@github.com:rainzhou/test.git ，而 origin 是给这个项目的远程仓库起的名字</span><br><span class="line">8. git remote -v //查看关联的仓库有哪些</span><br><span class="line">9. git push origin master 提交</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/03/27/Git-系列（一）-基础操作/" data-id="cjsk0qzcv0002k4v1b1fgkmgu" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/03/29/sea-js-基本用法/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          sea.js 基本用法
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/03/09/HTTP-协议系列（一）-版本/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">HTTP 协议系列（一）|版本</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/07/22/API 接口加密方案/">API 接口加密方案</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/05/JavaScript-获取地址栏参数/">JavaScript 获取地址栏参数</a>
+          </li>
+        
+          <li>
+            <a href="/2018/06/30/Window-下-MySQL-环境的安装/">Window 下 MySQL 环境的安装</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/31/JavaScript-中的12种循环遍历方法/">JavaScript 中的12种循环遍历方法</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/21/前端切图技巧/">前端切图技巧</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="default">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-前端性能优化" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/02/前端性能优化/" class="article-date">
+  <time datetime="2018-03-02T10:57:40.000Z" itemprop="datePublished">2018-03-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/02/前端性能优化/">前端性能优化</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近看了一些 web 性能优化的博客，整理了一下。</p>
+<h3 id="博客"><a href="#博客" class="headerlink" title="博客"></a><strong>博客</strong></h3><ol>
+<li><a href="http://www.ruanyifeng.com/blog/2015/09/web-page-performance-in-depth.html" target="_blank" rel="noopener">网页性能管理详解 - 阮一峰的网络日志</a></li>
+<li><a href="http://www.cnblogs.com/qcloud1001/p/6782916.html" target="_blank" rel="noopener">页面性能优化的利器 — Timeline - 云加社区 - 博客园</a></li>
+<li><a href="https://baijiahao.baidu.com/s?id=1563999812626060&amp;wfr=spider&amp;for=pc" target="_blank" rel="noopener">什么是CDN，为什么你的网站需要它？</a></li>
+<li><a href="http://blog.brucefeng.info/post/static-backend-asolate" target="_blank" rel="noopener">网站开发动静分离实践 - BruceFeng</a></li>
+<li><a href="http://www.cnblogs.com/sprying/p/4251682.html" target="_blank" rel="noopener">网页性能优化 - 小方。 - 博客园</a></li>
+<li><a href="http://velocity.oreilly.com.cn/2013/index.php?func=session&amp;id=14" target="_blank" rel="noopener">16毫秒的优化——Web前端性能优化的微观分析——O’Reilly Velocity China 2013 Web 性能与运维大会</a></li>
+<li><a href="https://segmentfault.com/a/1190000011516068" target="_blank" rel="noopener">全新Chrome Devtools Performance使用指南 - 个人文章 - SegmentFault 思否</a></li>
+</ol>
+<h3 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a><strong>缓存</strong></h3><ol start="8">
+<li><a href="http://www.cnblogs.com/chyingp/p/7456231.html" target="_blank" rel="noopener">面试的妹纸问我：web缓存设置不是后台的事情吗？ - 程序猿小卡 - 博客园</a></li>
+<li><a href="http://www.cnblogs.com/dojo-lzz/p/5515839.html" target="_blank" rel="noopener">作为前端应当了解的Web缓存知识 - 木的树 - 博客园</a></li>
+<li><a href="http://www.cnblogs.com/EmptyFS/p/4131691.html" target="_blank" rel="noopener">关于服务器缓存的思考 - AllEmpty - 博客园</a></li>
+<li><a href="https://www.cnblogs.com/chenqf/p/6386163.html" target="_blank" rel="noopener">彻底弄懂HTTP缓存机制及原理 - 木上有水 - 博客园</a></li>
+<li><a href="http://www.cnblogs.com/dolphinX/p/3405335.html" target="_blank" rel="noopener">HTML5本地存储——Web SQL Database - 谦行 - 博客园</a></li>
+<li><a href="http://www.cnblogs.com/dolphinX/p/3348469.html" target="_blank" rel="noopener">HTML5 WebStorage - 谦行 - 博客园</a></li>
+</ol>
+<h3 id="电子书"><a href="#电子书" class="headerlink" title="电子书"></a><strong>电子书</strong></h3><ol start="14">
+<li><a href="https://pan.baidu.com/s/1htBkQqg#list/path=%2F" target="_blank" rel="noopener">图解HTTP 彩色版.pdf</a></li>
+<li><a href="https://pan.baidu.com/s/1htBkQqg#list/path=%2F" target="_blank" rel="noopener">高性能网站建设指南</a></li>
+<li><a href="https://pan.baidu.com/s/1htBkQqg#list/path=%2F" target="_blank" rel="noopener">高性能网站建设进阶指南</a></li>
+</ol>
+<p><span style="float:right;"><em>文中内容多为原创，若有侵权，请联系核实删除，转载请注明出处 </em></span><br><span style="float:right;"><em>周明杰</em></span></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/03/02/前端性能优化/" data-id="cjsk0qzdb000dk4v13pi8imo5" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-微信小程序开发入门" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/02/微信小程序开发入门/" class="article-date">
+  <time datetime="2018-03-02T05:04:58.000Z" itemprop="datePublished">2018-03-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/02/微信小程序开发入门/">微信小程序开发入门</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>公司马上要有小程序的项目，于是趁着年后这几天空闲，赶紧研究起来。</p>
+<p><img src="http://pba3iv8pa.bkt.clouddn.com/wechatweb.jpg" alt></p>
+<h3 id="学习资料"><a href="#学习资料" class="headerlink" title="学习资料"></a>学习资料</h3><p><a href="https://mp.weixin.qq.com/debug/wxadoc/dev/index.html?t=201832" target="_blank" rel="noopener">官网开发文档</a></p>
+<h3 id="建议学习步骤"><a href="#建议学习步骤" class="headerlink" title="建议学习步骤"></a>建议学习步骤</h3><ol>
+<li>跟着开发文档简易教程，申请账号、安装开发工具、模拟官方第一个小程序模板、编译预览【手机真机预览】。</li>
+<li>学习小程序的代码构成，文件的配置</li>
+<li>看API文档，了解小程序的能力（比如能调用那些接口，摄像头、位置信息、陀螺仪等）</li>
+<li>自己策划一个简单的小产品，实际开发一下</li>
+<li>保证功能正常下，上传代码、提交审核、上线。【完整流程就跑通了】</li>
+</ol>
+<h3 id="注意的地方"><a href="#注意的地方" class="headerlink" title="注意的地方"></a>注意的地方</h3><ol start="6">
+<li>账户申请分个人账户和企业账户，个人的话有些功能和权限是限制的，比如【附近的小程序】，企业账户有相关的认证手续。</li>
+<li>小程序在非浏览器环境运行，故没有widow对象，也不支持常见的Js Dom操作，以数据绑定的形式实现。（类似vue的双向数据绑定）。</li>
+<li>小程序的开发语言基于js和html，css封装自定义的，支持Es6特性。</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/03/02/微信小程序开发入门/" data-id="cjsk0qzde000fk4v14degftap" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/22/hello-world/" class="article-date">
+  <time datetime="2018-01-22T07:09:45.000Z" itemprop="datePublished">2018-01-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/22/hello-world/">hello，world</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>这是我用 hexo 写的第一篇文章，介绍了 hexo 的基本操作指令，包括从新建立一篇新的文章，开启本地服务，构建静态文件，远程部署。</p>
+<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="创建一个新帖子"><a href="#创建一个新帖子" class="headerlink" title="创建一个新帖子"></a>创建一个新帖子</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>更多信息: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">写作</a></p>
+<h3 id="运行服务器"><a href="#运行服务器" class="headerlink" title="运行服务器"></a>运行服务器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>更多信息: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">服务器</a></p>
+<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>更多信息: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">生成</a></p>
+<h3 id="部署到远程站点"><a href="#部署到远程站点" class="headerlink" title="部署到远程站点"></a>部署到远程站点</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>更多信息: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">部署</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/01/22/hello-world/" data-id="cjsk0qzd50009k4v1ww05fyt3" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-HBuilder-打包-App-流程记录制" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/19/HBuilder-打包-App-流程记录制/" class="article-date">
+  <time datetime="2018-01-19T02:38:34.000Z" itemprop="datePublished">2018-01-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/19/HBuilder-打包-App-流程记录制/">HBuilder 打包 App 流程记录制</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p> 摘要：基于HBuilder建立一个简单的移动app项目，并打包成apk,使用这套平台用H5开发真正的移动项目，相当于省去了原生部分的人力和工作配合，性能的话，后续我会基于这套技术开发相关的应用来验证，看能否媲美常用的hybrid应用。</p>
+<h4 id="一、-下载HBuilder安装包，官网地址：http-www-dcloud-io"><a href="#一、-下载HBuilder安装包，官网地址：http-www-dcloud-io" class="headerlink" title="一、  下载HBuilder安装包，官网地址：http://www.dcloud.io/"></a>一、  下载HBuilder安装包，官网地址：<a href="http://www.dcloud.io/" target="_blank" rel="noopener">http://www.dcloud.io/</a></h4><p> <img src="http://pba3iv8pa.bkt.clouddn.com/hbuilder01.png-addwatermark" alt><br><img src="http://stormzhang.com/image/jake-google.png" alt></p>
+<h4 id="二、-打开HBuilder并注册登录，新建移动App项目。"><a href="#二、-打开HBuilder并注册登录，新建移动App项目。" class="headerlink" title="二、  打开HBuilder并注册登录，新建移动App项目。"></a>二、  打开HBuilder并注册登录，新建移动App项目。</h4><p><img src="http://pba3iv8pa.bkt.clouddn.com/hbuider02.png-addwatermark" alt></p>
+<h4 id="三、-点击新建移动App后，在弹出的框中，选择相关项目信息，点击完成。"><a href="#三、-点击新建移动App后，在弹出的框中，选择相关项目信息，点击完成。" class="headerlink" title="三、  点击新建移动App后，在弹出的框中，选择相关项目信息，点击完成。"></a>三、  点击新建移动App后，在弹出的框中，选择相关项目信息，点击完成。</h4><p><img src="http://pba3iv8pa.bkt.clouddn.com/hbuilder03.png-addwatermark" alt></p>
+<h4 id="四、现在先测试真机调试能不能用，usb连接手机后，打开开发者模式，和usb调试，然后才能在真机运行里面找到你的手机和项目。"><a href="#四、现在先测试真机调试能不能用，usb连接手机后，打开开发者模式，和usb调试，然后才能在真机运行里面找到你的手机和项目。" class="headerlink" title="四、现在先测试真机调试能不能用，usb连接手机后，打开开发者模式，和usb调试，然后才能在真机运行里面找到你的手机和项目。"></a>四、现在先测试真机调试能不能用，usb连接手机后，打开开发者模式，和usb调试，然后才能在真机运行里面找到你的手机和项目。</h4><p><img src="http://pba3iv8pa.bkt.clouddn.com/hbuilder04.png-addwatermark" alt></p>
+<h4 id="五、在手机上可以正常调试了，成功加载了我的首页index-html，现在就可以正常的调试了，当更改了代码后，保存下，手机端就自动重新加载页面，实测可用。"><a href="#五、在手机上可以正常调试了，成功加载了我的首页index-html，现在就可以正常的调试了，当更改了代码后，保存下，手机端就自动重新加载页面，实测可用。" class="headerlink" title="五、在手机上可以正常调试了，成功加载了我的首页index,html，现在就可以正常的调试了，当更改了代码后，保存下，手机端就自动重新加载页面，实测可用。"></a>五、在手机上可以正常调试了，成功加载了我的首页index,html，现在就可以正常的调试了，当更改了代码后，保存下，手机端就自动重新加载页面，实测可用。</h4><p><img src="http://pba3iv8pa.bkt.clouddn.com/hbuilder05.png-addwatermark" alt></p>
+<h4 id="六、接下来，开始打包，如图示，注意：app的logo图标和启动动画都是可以自定义的。我这里只做了一个简单的页面，所以很多权限和参数都不需要配置，配置文件都在manifest-json文件里面。"><a href="#六、接下来，开始打包，如图示，注意：app的logo图标和启动动画都是可以自定义的。我这里只做了一个简单的页面，所以很多权限和参数都不需要配置，配置文件都在manifest-json文件里面。" class="headerlink" title="六、接下来，开始打包，如图示，注意：app的logo图标和启动动画都是可以自定义的。我这里只做了一个简单的页面，所以很多权限和参数都不需要配置，配置文件都在manifest.json文件里面。"></a>六、接下来，开始打包，如图示，注意：app的logo图标和启动动画都是可以自定义的。我这里只做了一个简单的页面，所以很多权限和参数都不需要配置，配置文件都在manifest.json文件里面。</h4><p><img src="http://pba3iv8pa.bkt.clouddn.com/hbuilder06.png-addwatermark" alt></p>
+<p><img src="http://pba3iv8pa.bkt.clouddn.com/hbuilder07.png-addwatermark" alt></p>
+<h4 id="七、打包完成，看效果，到此一个简单的app模板就算完成了。"><a href="#七、打包完成，看效果，到此一个简单的app模板就算完成了。" class="headerlink" title="七、打包完成，看效果，到此一个简单的app模板就算完成了。"></a>七、打包完成，看效果，到此一个简单的app模板就算完成了。</h4><p><img src="http://pba3iv8pa.bkt.clouddn.com/hbuilder08.png-addwatermark" alt></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/01/19/HBuilder-打包-App-流程记录制/" data-id="cjsk0qzcz0004k4v1plcr0y5q" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-排查-Window-端口占用并结束相关进程" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/18/排查-Window-端口占用并结束相关进程/" class="article-date">
+  <time datetime="2018-01-18T01:25:05.000Z" itemprop="datePublished">2018-01-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/18/排查-Window-端口占用并结束相关进程/">排查 Window 端口占用并结束相关进程</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>开的端口太多，难免遇到端口冲突的情况，这时候快速排查占用的程序就很重要了，熟悉这几个 cmd 命令，帮你解决这个问题。</p>
+<ol>
+<li>启动cmd命令行</li>
+<li><p>运行netstat –ano，可列出所有端口情况<br><img src="http://images2017.cnblogs.com/blog/1194550/201801/1194550-20180118091912381-2134128654.png" alt="加载中"></p>
+</li>
+<li><p>根据被占用的端口号，比如8081，运行netstat -aon|findstr “8081”，找到它对应的PID号，比如4432<br><img src="http://images2017.cnblogs.com/blog/1194550/201801/1194550-20180118091937131-385308392.png" alt="加载中"></p>
+</li>
+<li><p>运行tasklist|findstr “4432”，找到占用此程序的进程或者程序javaw.exe;<br>运行taskkill /f /t /im javaw.exe结束它<br><img src="http://images2017.cnblogs.com/blog/1194550/201801/1194550-20180118091948631-653345483.png" alt="加载中"></p>
+</li>
+<li><p>(嫌4太麻烦？)打开任务管理器，根据PID找到对应的进程，结束掉，如果找不到PID可以在查看里面将复选框PID选中，就可以了。</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/01/18/排查-Window-端口占用并结束相关进程/" data-id="cjsk0qzdt000jk4v1f78d33ga" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-前端-PS-常用快捷键整理" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/17/前端-PS-常用快捷键整理/" class="article-date">
+  <time datetime="2018-01-17T09:16:38.000Z" itemprop="datePublished">2018-01-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/17/前端-PS-常用快捷键整理/">前端 PS 常用快捷键整理</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="图片来源"><a href="#图片来源" class="headerlink" title="图片来源"></a>图片来源</h3><ul>
+<li>UI提供的psd图</li>
+<li>印屏幕：PrScrn SysRq(键盘按键)</li>
+<li>浏览器（插件）获取</li>
+</ul>
+<h3 id="常用的快捷键"><a href="#常用的快捷键" class="headerlink" title="常用的快捷键"></a>常用的快捷键</h3><ul>
+<li>新建 Ctrl + N </li>
+<li>取消选框 Ctrl + D</li>
+<li>反选 Ctrl + shift + i</li>
+<li>铺颜色（前景色）/(后景色) Alt + delete / Ctrl + delete </li>
+<li>全屏自由模式 F</li>
+<li>信息面板 F8</li>
+<li>索引图片编辑：图像 ==》 模式（RGB）</li>
+<li>放大/缩小 Ctrl ++/– </li>
+<li>自由变换（铺色用） Ctrl + T</li>
+<li>调用代码 F12 </li>
+<li>调出标尺 Ctrl + R</li>
+<li>隐藏标尺线 “Ctrl + ；”</li>
+<li>另存为：Ctrl + Shift + S</li>
+<li>PS吸管工具—吸颜色—图像—调整—替换颜色</li>
+</ul>
+<h3 id="图层图片替换"><a href="#图层图片替换" class="headerlink" title="图层图片替换"></a>图层图片替换</h3><ol>
+<li>选中区域delete；</li>
+<li>复制新图片贴进来，移动到合适位置；</li>
+</ol>
+<h3 id="裁切圆形图"><a href="#裁切圆形图" class="headerlink" title="裁切圆形图"></a>裁切圆形图</h3><ol>
+<li>先选中椭圆选框工具</li>
+<li>状态栏样式部分，选择固定大小，设置要选择的圆形区域尺寸像素</li>
+<li>鼠标左键在图片上画出圆形区域，拖动到合适位置，复制到新图层，保存</li>
+</ol>
+<h3 id="制作简单gif图（cs3）"><a href="#制作简单gif图（cs3）" class="headerlink" title="制作简单gif图（cs3）"></a>制作简单gif图（cs3）</h3><ol>
+<li>将不同图层拖入ps</li>
+<li>窗口 —&gt; 动画 —&gt; 建立多个帧图片 —&gt; 保存为gif图</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/01/17/前端-PS-常用快捷键整理/" data-id="cjsk0qzd8000bk4v1xbenmors" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-JavaScript-文本框字数动态监测" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/28/JavaScript-文本框字数动态监测/" class="article-date">
+  <time datetime="2017-11-28T10:43:51.000Z" itemprop="datePublished">2017-11-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/28/JavaScript-文本框字数动态监测/">JavaScript 文本框字数动态监测</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>通过js代码实时监测，文本框内容的变化以及长度，下图是一个实际使用场景。</p>
+<p><img src="https://images2018.cnblogs.com/blog/1194550/201711/1194550-20171128184815206-1560586040.png" alt>
+　　</p>
+<p>HTML部分：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">"Text1"</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">onkeyup</span>=<span class="string">"TmaxLength(this)"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"Counter"</span> <span class="attr">style</span>=<span class="string">"color: red;"</span>&gt;</span>0<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>JS部分</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">　　<span class="comment">//实时更新输入框文字长度</span></span><br><span class="line">　　<span class="function"><span class="keyword">function</span> <span class="title">TmaxLength</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">　　　　<span class="comment">//x.getAttribute是判断是否为DOM结构</span></span><br><span class="line">　　　　<span class="keyword">var</span> nMaxLen = x.getAttribute ? <span class="built_in">parseInt</span>(x.getAttribute(<span class="string">"maxlength"</span>)) : <span class="string">""</span>; </span><br><span class="line">　　　　<span class="keyword">if</span> (x.getAttribute &amp;&amp; x.value.length &gt; nMaxLen) &#123; </span><br><span class="line">    　　　　x.value = x.value.substring(<span class="number">0</span>, nMaxLen); </span><br><span class="line">    　　&#125; </span><br><span class="line">　　　　<span class="built_in">document</span>.getElementById(<span class="string">"Counter"</span>).innerHTML = x.value.length; </span><br><span class="line">　　&#125;</span><br></pre></td></tr></table></figure>
+<p>注意：对于可编辑div的话，不能用value属性，改为innerText,且会涉及到光标位置的问题，下篇文章会写到光标定位。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/11/28/JavaScript-文本框字数动态监测/" data-id="cjsk0qzd10006k4v1zwcwlx2v" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-市面上主流的-UI-框架" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/20/市面上主流的-UI-框架/" class="article-date">
+  <time datetime="2017-11-20T11:35:40.000Z" itemprop="datePublished">2017-11-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/20/市面上主流的-UI-框架/">市面上主流的 UI 框架</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>bootstrap 可能是最流行的 ui 库了</p>
+<p>MUI 结合 Hbuild 更好用</p>
+<p>WeUI 腾讯出品，和微信样式完美匹配</p>
+<p>Element UI 饿了么出品的桌面端 ui 框架</p>
+<p>Mint-UI 饿了么针对移动端的 ui 框架</p>
+<p>VUX 基于 weui 和 vue 的 ui 组件库</p>
+<p>Weex 阿里开源<br><img src="https://images2017.cnblogs.com/blog/1194550/201711/1194550-20171120190725571-649661364.jpg" alt></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/11/20/市面上主流的-UI-框架/" data-id="cjsk0qzdd000ek4v1r9pod1gs" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-JavaScript-之-rem-的动态控制" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/02/05/JavaScript-之-rem-的动态控制/" class="article-date">
+  <time datetime="2017-02-05T03:07:04.000Z" itemprop="datePublished">2017-02-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/05/JavaScript-之-rem-的动态控制/">JavaScript 之 rem 的动态控制</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>摘要：在写响应式H5页面的时候，我常常会用rem字体，为了兼容多个分辨率的设备，需要写多个@media标签，太麻烦并且不够精致，尤其是移动端的页面往往达不到我想要的效果，后来就用js替代了css的@media，下面是代码。（以下方案以750px的设计图）</p>
+<p><strong>方案一、缺点：浏览器里使用没问题，安卓和ios设备hybrid app里嵌入的时候，会受到系统字体设置的影响，原理就是当系统设置超大字体的时候，会改变html的font-size大小，引起页面bug。</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params">doc, win</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> docEl = doc.documentElement,</span><br><span class="line">        resizeEvt = <span class="string">'orientationchange'</span> <span class="keyword">in</span> <span class="built_in">window</span> ? <span class="string">'orientationchange'</span> : <span class="string">'resize'</span>,</span><br><span class="line">        recalc = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> clientWidth = docEl.clientWidth;</span><br><span class="line">            <span class="keyword">if</span> (!clientWidth) <span class="keyword">return</span>;</span><br><span class="line">            <span class="keyword">if</span>(clientWidth&gt;=<span class="number">750</span>)&#123;</span><br><span class="line">                docEl.style.fontSize = <span class="string">'100px'</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                docEl.style.fontSize = <span class="number">100</span> * (clientWidth / <span class="number">750</span>) + <span class="string">'px !important'</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">    <span class="keyword">if</span> (!doc.addEventListener) <span class="keyword">return</span>;</span><br><span class="line">    win.addEventListener(resizeEvt, recalc, <span class="literal">false</span>);</span><br><span class="line">    doc.addEventListener(<span class="string">'DOMContentLoaded'</span>, recalc, <span class="literal">false</span>);</span><br><span class="line">&#125;)(<span class="built_in">document</span>, <span class="built_in">window</span>);</span><br></pre></td></tr></table></figure></p>
+<p><strong>方案二、重置了系统设置的字体，解决了此bug，暂无发现有其他问题</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">htmlFontSize</span>(<span class="params"></span>)</span>&#123; </span><br><span class="line">    <span class="keyword">var</span> h = <span class="built_in">Math</span>.max(<span class="built_in">document</span>.documentElement.clientHeight, <span class="built_in">window</span>.innerHeight || <span class="number">0</span>); </span><br><span class="line">    <span class="keyword">var</span> w = <span class="built_in">Math</span>.max(<span class="built_in">document</span>.documentElement.clientWidth, <span class="built_in">window</span>.innerWidth || <span class="number">0</span>); </span><br><span class="line">    <span class="keyword">var</span> width = w &gt; h ? h : w; </span><br><span class="line">    width = width &gt; <span class="number">750</span> ? <span class="number">750</span> : width; </span><br><span class="line">    <span class="keyword">var</span> fz = ~~(width*<span class="number">100000</span>/<span class="number">37.5</span>)/<span class="number">20000</span>; </span><br><span class="line">    <span class="built_in">document</span>.getElementsByTagName(<span class="string">"html"</span>)[<span class="number">0</span>].style.cssText = <span class="string">'font-size: '</span> + fz +<span class="string">"px"</span>; </span><br><span class="line">    <span class="keyword">var</span> realfz = ~~(+<span class="built_in">window</span>.getComputedStyle(<span class="built_in">document</span>.getElementsByTagName(<span class="string">"html"</span>)[<span class="number">0</span>]).fontSize.replace(<span class="string">'px'</span>,<span class="string">''</span>)*<span class="number">10000</span>)/<span class="number">10000</span>;   </span><br><span class="line">    <span class="keyword">if</span> (fz !== realfz) &#123; </span><br><span class="line">        <span class="built_in">document</span>.getElementsByTagName(<span class="string">"html"</span>)[<span class="number">0</span>].style.cssText = <span class="string">'font-size:'</span> + fz * (fz / realfz)+<span class="string">"px"</span>; </span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>衍生问题：安卓和ios怎么屏蔽系统字体大小的设置？</strong></p>
+<p><strong>安卓、WebView加上这个设置后,可以屏蔽系统设置的字体影响，这样就不用js再去判断了。</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">webview.getSettings().setTextZoom(<span class="number">100</span>);</span><br></pre></td></tr></table></figure></p>
+<p><strong>ios、ios当系统字体变化时，会给body增加新属性 -webkit-text-size-adjust，所以直接css控制下。</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">body &#123;</span><br><span class="line">    -webkit-text-size-adjust: <span class="number">100</span>% !important;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/02/05/JavaScript-之-rem-的动态控制/" data-id="cjsk0qzd00005k4v1d61em4rd" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/07/22/API 接口加密方案/">API 接口加密方案</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/05/JavaScript-获取地址栏参数/">JavaScript 获取地址栏参数</a>
+          </li>
+        
+          <li>
+            <a href="/2018/06/30/Window-下-MySQL-环境的安装/">Window 下 MySQL 环境的安装</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/31/JavaScript-中的12种循环遍历方法/">JavaScript 中的12种循环遍历方法</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/21/前端切图技巧/">前端切图技巧</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

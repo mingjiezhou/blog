@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Window 下 MySQL 环境的安装 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="MySQL 是最流行的关系型数据库管理系统，在WEB应用方面 MySQL 是最好的RDBMS(Relational Database Management System：关系数据库管理系统)应用软件之一。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Window 下 MySQL 环境的安装">
+<meta property="og:url" content="http://yoursite.com/2018/06/30/Window-下-MySQL-环境的安装/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="MySQL 是最流行的关系型数据库管理系统，在WEB应用方面 MySQL 是最好的RDBMS(Relational Database Management System：关系数据库管理系统)应用软件之一。">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-02-25T06:37:43.413Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Window 下 MySQL 环境的安装">
+<meta name="twitter:description" content="MySQL 是最流行的关系型数据库管理系统，在WEB应用方面 MySQL 是最好的RDBMS(Relational Database Management System：关系数据库管理系统)应用软件之一。">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Window-下-MySQL-环境的安装" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/30/Window-下-MySQL-环境的安装/" class="article-date">
+  <time datetime="2018-06-30T03:52:10.000Z" itemprop="datePublished">2018-06-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Window 下 MySQL 环境的安装
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="简介："><a href="#简介：" class="headerlink" title="简介："></a>简介：</h3><p>MySQL 是最流行的关系型数据库管理系统，在WEB应用方面 MySQL 是最好的RDBMS(Relational Database Management System：关系数据库管理系统)应用软件之一。<br>我选择它的几点原因：</p>
+<ol>
+<li>体积小，速度快</li>
+<li>免费，源代码开源，跨平台</li>
+<li>用户量大，遇到问题容易找到解决方案</li>
+</ol>
+<h3 id="下载："><a href="#下载：" class="headerlink" title="下载："></a>下载：</h3><p>可在其官网下载所需版本，注意有的高级版本是收费的，但对于多数用户来说免费版本就够用了，推荐：<a href="https://dev.mysql.com/downloads/mysql/" target="_blank" rel="noopener">MySQL Community Server 5.6</a>，可下载免安装包，解压后免去了安装程序。</p>
+<h3 id="安装："><a href="#安装：" class="headerlink" title="安装："></a>安装：</h3><ol>
+<li>解压 zip 包后，进入此目录 D:\MySQL\mysql-5.6.40-winx64\bin 下的 cmd 命令行工具（根据你安装位置自己调整）</li>
+<li>安装 MySQL 服务，执行 mysqld install</li>
+<li>登录 MySQL，首次登录按照默认设置是 root 账户，是没有密码的，所以直接回车就可以进入了。<br>D:\MySQL\mysql-5.6.40-winx64\bin &gt; mysql -u root -p</li>
+<li>查询用户密码，mysql&gt; select host,user,authentication_string from mysql.user;<br>密码是加密过的，看不到明文，这是一串字符，但是能看到用户名</li>
+<li>设置或者修改用户密码，mysql&gt; update mysql.user set authentication_string=password(“123456”) where user=”root”;<br>root 是用户名，可根据当前用户更改</li>
+<li>修改 root 用户名：<br>mysql&gt; use mysql;<br>mysql&gt; update user set user=’xly’ where user=’root’;</li>
+<li>退出 MySQL, mysql&gt; quit</li>
+</ol>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他:"></a>其他:</h3><ol>
+<li>环境变量</li>
+<li>生成 data 文件，mysqld –initialize-insecure –user=mysql  在D:\MySQL\mysql-5.6.40-winx64 目录下生成data目录</li>
+</ol>
+<h3 id="参考链接："><a href="#参考链接：" class="headerlink" title="参考链接："></a>参考链接：</h3><p><a href="https://www.cnblogs.com/dtting/p/7691202.html" target="_blank" rel="noopener">Windows下MySQL下载安装、配置与使用</a><br><a href="https://www.cnblogs.com/reyinever/p/8551977.html" target="_blank" rel="noopener">WINDOWS下安装MYSQL—图文详解</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/06/30/Window-下-MySQL-环境的安装/" data-id="cjsk0qzd40008k4v12sgvyr38" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/07/05/JavaScript-获取地址栏参数/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          JavaScript 获取地址栏参数
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/05/31/JavaScript-中的12种循环遍历方法/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">JavaScript 中的12种循环遍历方法</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/07/22/API 接口加密方案/">API 接口加密方案</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/05/JavaScript-获取地址栏参数/">JavaScript 获取地址栏参数</a>
+          </li>
+        
+          <li>
+            <a href="/2018/06/30/Window-下-MySQL-环境的安装/">Window 下 MySQL 环境的安装</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/31/JavaScript-中的12种循环遍历方法/">JavaScript 中的12种循环遍历方法</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/21/前端切图技巧/">前端切图技巧</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>HTTP 协议系列（一）|版本 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="当我们在浏览器的地址栏输入URL后，信息会被发送到WEB服务器，服务器得到响应，将数据传输回来，展示到WEB页面上，这其中的传输方法就是HTTP协议,这篇介绍下 http 协议的版本更迭。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTTP 协议系列（一）|版本">
+<meta property="og:url" content="http://yoursite.com/2018/03/09/HTTP-协议系列（一）-版本/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="当我们在浏览器的地址栏输入URL后，信息会被发送到WEB服务器，服务器得到响应，将数据传输回来，展示到WEB页面上，这其中的传输方法就是HTTP协议,这篇介绍下 http 协议的版本更迭。">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://pba3iv8pa.bkt.clouddn.com/httplogo.jpg">
+<meta property="og:updated_time" content="2019-02-25T06:37:43.405Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTTP 协议系列（一）|版本">
+<meta name="twitter:description" content="当我们在浏览器的地址栏输入URL后，信息会被发送到WEB服务器，服务器得到响应，将数据传输回来，展示到WEB页面上，这其中的传输方法就是HTTP协议,这篇介绍下 http 协议的版本更迭。">
+<meta name="twitter:image" content="http://pba3iv8pa.bkt.clouddn.com/httplogo.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-HTTP-协议系列（一）-版本" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/09/HTTP-协议系列（一）-版本/" class="article-date">
+  <time datetime="2018-03-09T08:45:53.000Z" itemprop="datePublished">2018-03-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      HTTP 协议系列（一）|版本
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>当我们在浏览器的地址栏输入URL后，信息会被发送到WEB服务器，服务器得到响应，将数据传输回来，展示到WEB页面上，这其中的传输方法就是HTTP协议。</p>
+<p><img src="http://pba3iv8pa.bkt.clouddn.com/httplogo.jpg" alt></p>
+<h3 id="一、HTTP-0-9"><a href="#一、HTTP-0-9" class="headerlink" title="一、HTTP 0.9"></a>一、HTTP 0.9</h3><p>发布于1991年，是首个HTTP版本，功能简单。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. 只支持GET请求方法，服务器响应返回的数据格式为，HTML格式的字符串</span><br><span class="line">    GET / index.html</span><br><span class="line">2. 不支持请求头，所以内容格式只能是纯文本</span><br><span class="line">3. 无状态性，请求响应后关闭，若有错误，不返回错误码</span><br></pre></td></tr></table></figure></p>
+<h3 id="二、HTTP-1-0"><a href="#二、HTTP-1-0" class="headerlink" title="二、HTTP 1.0"></a>二、HTTP 1.0</h3><p>发布于1996年5月，HTTP协议的第二个版本，第一个在通讯中指定版本号的HTTP协议版本，至今仍被广泛采用。相对于HTTP 0.9 增加了如下主要特性：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1. 任何格式的内容都可以发送。这使得互联网不仅可以传输文字，还能传输图像、视频、二进制文件。这为互联网的大发展奠定了基础。</span><br><span class="line">2. 除了GET命令，还引入了POST命令和HEAD命令，丰富了浏览器与服务器的互动手段。</span><br><span class="line">3. HTTP请求和回应的格式也变了。除了数据部分，每次通信都必须包括头信息（HTTP header），用来描述一些元数据。</span><br><span class="line">4. 支持长连接（但默认还是使用短连接），缓存机制，以及身份认证。</span><br><span class="line">5. 其他的新增功能还包括状态码（status code）、多字符集支持、多部分发送（multi-part type）、权限（authorization）、缓存（cache）、内容编码（content encoding）等。</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">GET / HTTP/1.0</span><br><span class="line">User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5)</span><br><span class="line">Accept: */*</span><br></pre></td></tr></table></figure>
+<h3 id="三、HTTP-1-1"><a href="#三、HTTP-1-1" class="headerlink" title="三、HTTP 1.1"></a>三、HTTP 1.1</h3><p>1997年1月，HTTP/1.1 版本发布，只比 1.0 版本晚了半年。它进一步完善了 HTTP 协议，一直用到了20年后的今天，直到现在还是最流行的版本。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1. 持久连接。</span><br><span class="line">2. 管道机制, 同时多个请求。</span><br><span class="line">3. Content-Length 字段，声明数据长度。</span><br><span class="line">4. 分块传输编码，提高效率。</span><br><span class="line">5. 新增了许多动词方法：PUT、PATCH、HEAD、 OPTIONS、DELETE。</span><br><span class="line">6. 客户端头信息增加 host 字段，表示请求的主体域名。</span><br></pre></td></tr></table></figure>
+<h3 id="四、HTTP-2"><a href="#四、HTTP-2" class="headerlink" title="四、HTTP 2"></a>四、HTTP 2</h3><p>2015年，HTTP/2 发布。它不叫 HTTP/2.0，是因为标准委员会不打算再发布子版本了，下一个新版本将是 HTTP/3。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. 二进制协议</span><br><span class="line">3. 数据流，可以取消请求在不中断TCP连接的情况下，继续被其它请求使用。</span><br><span class="line">4. 头信息压缩</span><br><span class="line">5. websoket全双工通信，可实现服务器推送等。</span><br></pre></td></tr></table></figure></p>
+<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><ol>
+<li><a href="http://www.ruanyifeng.com/blog/2016/08/http.html" target="_blank" rel="noopener">HTTP 协议入门-阮一峰</a></li>
+<li><a href="https://www.cnblogs.com/andashu/p/6441271.html" target="_blank" rel="noopener">HTTP协议的前世今生——各版本HTTP协议对比</a></li>
+<li>[图解HTTP协议-上野宣]</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/03/09/HTTP-协议系列（一）-版本/" data-id="cjsk0qzcy0003k4v1mwl251ao" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/03/27/Git-系列（一）-基础操作/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Git 系列（一）|基础
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/03/03/微信小程序入门-指南针/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">微信小程序入门|指南针</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/07/22/API 接口加密方案/">API 接口加密方案</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/05/JavaScript-获取地址栏参数/">JavaScript 获取地址栏参数</a>
+          </li>
+        
+          <li>
+            <a href="/2018/06/30/Window-下-MySQL-环境的安装/">Window 下 MySQL 环境的安装</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/31/JavaScript-中的12种循环遍历方法/">JavaScript 中的12种循环遍历方法</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/21/前端切图技巧/">前端切图技巧</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

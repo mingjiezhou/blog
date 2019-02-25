@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>sea.js 基本用法 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="SeaJS 是一个适用于 Web 浏览器端的模块加载器，使用 SeaJS 可以更好地组织 JavaScript 代码；Sea.js 遵循 CMD 规范、模块化JS代码、依赖的自动加载、配置的简洁清晰，可以让程序员更多地专注编码。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sea.js 基本用法">
+<meta property="og:url" content="http://yoursite.com/2018/03/29/sea-js-基本用法/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="SeaJS 是一个适用于 Web 浏览器端的模块加载器，使用 SeaJS 可以更好地组织 JavaScript 代码；Sea.js 遵循 CMD 规范、模块化JS代码、依赖的自动加载、配置的简洁清晰，可以让程序员更多地专注编码。">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-02-25T06:37:43.417Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="sea.js 基本用法">
+<meta name="twitter:description" content="SeaJS 是一个适用于 Web 浏览器端的模块加载器，使用 SeaJS 可以更好地组织 JavaScript 代码；Sea.js 遵循 CMD 规范、模块化JS代码、依赖的自动加载、配置的简洁清晰，可以让程序员更多地专注编码。">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-sea-js-基本用法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/29/sea-js-基本用法/" class="article-date">
+  <time datetime="2018-03-29T08:14:22.000Z" itemprop="datePublished">2018-03-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      sea.js 基本用法
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><ol>
+<li>SeaJS 是一个适用于 Web 浏览器端的模块加载器。使用 SeaJS，可以更好地组织 JavaScript 代码。</li>
+<li>Sea.js 遵循 CMD 规范，模块化JS代码。依赖的自动加载、配置的简洁清晰，可以让程序员更多地专注编码。</li>
+</ol>
+<h3 id="模块化开发解决那些痛点"><a href="#模块化开发解决那些痛点" class="headerlink" title="模块化开发解决那些痛点"></a>模块化开发解决那些痛点</h3><ol>
+<li>恼人的命名冲突</li>
+<li>烦琐的文件依赖</li>
+</ol>
+<h3 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h3><ol>
+<li>下载：<a href="https://github.com/seajs/seajs【github仓库地址】" target="_blank" rel="noopener">https://github.com/seajs/seajs【github仓库地址】</a></li>
+<li>下载后解压ZIP文件，注意dist文件夹就是解压过的能直接被浏览器识别的文件</li>
+<li><p>引入seajs库</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;assets/scripts/seajs/sea.js&quot; id=&quot;seajsnode&quot;&gt;&lt;/script&gt;</span><br><span class="line">// id属性为seajs内置属性</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>编写自己的代码 <a href="https://github.com/rainzhou-chn/seajs-firstdemo.git" target="_blank" rel="noopener">已上传github,可点击下载</a></p>
+</li>
+</ol>
+<h3 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h3><ol>
+<li><a href="https://github.com/seajs/seajs/issues/547" target="_blank" rel="noopener">前端模块化</a></li>
+<li><a href="https://blog.csdn.net/meitesiluyuan/article/details/48969169" target="_blank" rel="noopener">seajs使用详细教程</a></li>
+<li><a href="http://www.zhangxinxu.com/sp/seajs/" target="_blank" rel="noopener">张鑫旭写的seajs文档</a></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/03/29/sea-js-基本用法/" data-id="cjsk0qzd6000ak4v1cj525da2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/03/30/require-js-基本用法/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          require.js 基本用法
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/03/27/Git-系列（一）-基础操作/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Git 系列（一）|基础</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/07/22/API 接口加密方案/">API 接口加密方案</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/05/JavaScript-获取地址栏参数/">JavaScript 获取地址栏参数</a>
+          </li>
+        
+          <li>
+            <a href="/2018/06/30/Window-下-MySQL-环境的安装/">Window 下 MySQL 环境的安装</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/31/JavaScript-中的12种循环遍历方法/">JavaScript 中的12种循环遍历方法</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/21/前端切图技巧/">前端切图技巧</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
