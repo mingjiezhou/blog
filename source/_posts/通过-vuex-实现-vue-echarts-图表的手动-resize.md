@@ -1,5 +1,5 @@
 ---
-title: '### 通过 vuex 实现 vue-echarts 图表的手动 resize'
+title: '通过 vuex 实现 vue-echarts 图表的手动 resize'
 date: 2019-03-15 19:29:44
 tags:
 description: 介绍 原生JS 监听 DOM 变化的方法，以及 vue-charts 的手动 resize 方法 
